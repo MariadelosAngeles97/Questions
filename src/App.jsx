@@ -1,8 +1,9 @@
 import questions from './models/questions'
 import { useQuestions } from './hooks/useQuestions'
 
-function App() {
-const {questionNow,score, isFinished, handleAnswerSubmit} = useQuestions()
+const App = ({title, btnReturn}) => {
+  
+  const {questionNow,score, isFinished, handleAnswerSubmit} = useQuestions()
 
 if(isFinished) 
   return (
@@ -13,21 +14,21 @@ if(isFinished)
         Obtuviste {score} de {questions.length}
         {" "}
       </span>
-      <button onClick={()=> window.location.href="/"} className='btn-finish'>Return test</button>
+      <button onClick={()=> window.location.href="/"} className='btn-finish'>{btnReturn}</button>
     </div>
   </main>
 )
 
   return (
     <main className='app'>
+
       <div className='number-question'>
         <span>Question {questionNow + 1} de {questions.length}</span> 
       </div>
-    <div className='title'>
-      <h1>ReactJs FrontEnd Developer Questions</h1>
-    </div>
-    <div className='left'>
-
+      <div className='title'>
+        <h1>{title}</h1>
+      </div>
+      <div className='left'>
 
       <div className='title-question'>
         {questions[questionNow].title}

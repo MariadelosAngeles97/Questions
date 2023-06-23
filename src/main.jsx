@@ -6,6 +6,6 @@ import './global.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <App title='ReactJs FrontEnd Developer Questions' btnReturn='Return Test'/>
   </React.StrictMode>,
 )
